@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #333;
+            color: #222;
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding: 93px;
+            padding-top: 74px;
+            background-color: khaki;
+            min-height: 100vh;
+            transform-origin: top left;
+            transition: transform 0.7s;
+        }
+
+        .content h1 {
+            margin-top: 20px;
+
+        }
+
+        nav ul li i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .container.showNav {
+            transform: rotate(-20deg);
+        }
+
+        .circleContainer {
+            position: fixed;
+            top: -65px;
+            left: -70px;
+        }
+
+        .circle {
+            background-color: lightsalmon;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        #open {
+            position: absolute;
+            top: 58%;
+            left: 55%;
+            height: 32px;
+            background: transparent;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            border: 0;
+
+        }
+
+        #close {
+            position: absolute;
+            top: 55%;
+            left: 44%;
+            height: 32px;
+            background: transparent;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transform: rotate(90deg);
+            transform-origin: top left;
+            border: 0;
+        }
+
+        .container.showNav .circle {
+            transform: rotate(-70deg);
+            /* transition: transform 1s; */
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        nav {
+            position: fixed;
+            bottom: 40px;
+            left: 0px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding-left: 30px;
+        }
+
+        nav ul li {
+            text-transform: uppercase;
+            color: white;
+            margin: 30px 0;
+            transform: translateX(-140%);
+            transition: transform 0.4s ease;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        nav ul li+li {
+            margin-left: 15px;
+            transform: translateX(-150%);
+        }
+
+        nav ul li+li+li {
+            margin-left: 30px;
+            transform: translateX(-200%);
+        }
+
+        .container.showNav+nav li {
+            transform: translateX(0);
+            transition-delay: 0.4s;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content small {
+            font-style: italic;
+            color: #222
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="circleContainer">
+            <div class="circle">
+                <button id="close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button id="open">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Blog Post-1</h1>
+
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, ea. Et quibusdam sapiente minus dolores
+                repellat. Unde ullam rerum debitis blanditiis, earum atque! Atque similique animi expedita fuga itaque,
+                culpa reprehenderit corporis. Tempora, ipsam deserunt velit ullam rerum repellat quibusdam facere enim
+                nulla voluptatum quasi eligendi pariatur reiciendis suscipit sit culpa, omnis amet praesentium. Eum
+                quisquam voluptate consequuntur modi fugiat laborum a, vero quibusdam hic eligendi voluptas excepturi ex
+                ipsum nam dicta minus magnam quidem sapiente veniam voluptatibus nesciunt! Error consectetur modi
+                suscipit ea unde eum itaque, asperiores, ab perferendis earum accusantium dolorem magnam. Ad facere
+                excepturi numquam odit expedita.</p>
+
+            <h1>Blog Post-2</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, ea. Et quibusdam sapiente minus dolores
+                repellat.
+                Unde ullam rerum debitis blanditiis, earum atque! Atque similique animi expedita fuga itaque, culpa
+                reprehenderit
+                corporis. Tempora, ipsam deserunt velit ullam rerum repellat quibusdam facere enim nulla voluptatum
+                quasi eligendi
+                pariatur reiciendis suscipit sit culpa, omnis amet praesentium. Eum quisquam voluptate consequuntur modi
+                fugiat
+                laborum a, vero quibusdam hic eligendi voluptas excepturi ex ipsum nam dicta minus magnam quidem
+                sapiente veniam
+                voluptatibus nesciunt! Error consectetur modi suscipit ea unde eum itaque, asperiores, ab perferendis
+                earum
+                accusantium dolorem magnam. Ad facere excepturi numquam odit expedita.
+            </p>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><i class="fas fa-home"></i>Home</li>
+            <li><i class="fas fa-user-alt"></i>About</li>
+            <li><i class="fas fa-envelope"></i>Contact</li>
+
+        </ul>
+    </nav>
+
+</body>
+
+<script src="RotatingNavigation.js"></script>
+
+</html>
